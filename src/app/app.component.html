@@ -1,3 +1,25 @@
 <app-header></app-header>
-
+<main>
+  <p class="form-group">
+    <label for="p">Value</label>&nbsp;
+    <input id="p" type="text" style="width: 5em;" [(ngModel)]="inputValue" >
+  </p>
+  <p>
+    <button (click)="onPush()">Push&nbsp;&darr;</button>&nbsp;
+    <button (click)="onPop()">Pop&nbsp;&uarr;</button>
+  </p>
+  <h3>Stack Content</h3>
+  <table>
+    <tr>
+      <th>Count</th>
+      <th>Value</th>
+    </tr>
+    @for(item of stackItems; track item.count){
+      <tr>
+        <td>{{item.count}}</td>
+        <td>{{item.value}}</td>
+      </tr>
+    }
+  </table>
+</main>
 <app-footer name="Applied Computing"></app-footer>
