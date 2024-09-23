@@ -8,18 +8,25 @@
     <button (click)="onPush()">Push&nbsp;&darr;</button>&nbsp;
     <button (click)="onPop()">Pop&nbsp;&uarr;</button>
   </p>
-  <h3>Stack Content</h3>
-  <table>
-    <tr>
-      <th>Count</th>
-      <th>Value</th>
-    </tr>
-    @for(item of stackItems; track item.count){
+  @if(stackItems.length > 0){
+    <h3>Stack Content</h3>
+    <table>
       <tr>
-        <td>{{item.count}}</td>
-        <td>{{item.value}}</td>
+        <th>Count</th>
+        <th>Value</th>
       </tr>
-    }
-  </table>
+      @for(item of stackItems; track item.count){
+        <tr>
+          <td>{{item.count}}</td>
+          <td>{{item.value}}</td>
+        </tr>
+      }
+    </table>
+  } @else {
+    <p class="message">
+      The Stack is Empty
+    </p>
+  }
+
 </main>
 <app-footer name="Applied Computing"></app-footer>

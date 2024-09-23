@@ -20,8 +20,11 @@ export class AppComponent {
   inputValue: string = "";
 
   onPush(): void{
-    this.stackData.push(this.inputValue);
-    this.stackItems = this.stackData.items;
+    if(this.inputValue.trim().length > 0){
+      this.stackData.push(this.inputValue);
+      this.stackItems = this.stackData.items;
+    }
+
   }
 
   onPop(): void{
